@@ -7,13 +7,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const data = await response.json();
 
-    const navbar = document.querySelector(".navbar");
-
-    if (!data.logged == true) {
-        showNotification(data.message, "error");
-        console.warn(data.message);
-        window.location.href = "SignIn.html"
-    }
+    const navbar = document.querySelector('.navbar');
 
     if (data.user_type == "Seller") {
         navbar.innerHTML = `
@@ -35,7 +29,19 @@ document.addEventListener("DOMContentLoaded", async function () {
             <li><a onclick="outUser()">Log Out</a></li>
         `;
     }
-})
+    const hamburger = document.getElementById('hamburger');
+
+    hamburger.addEventListener('click', () => {
+        document.querySelector('.navbar').classList.toggle('active');
+    });
+
+    if (!data.logged) {
+        showNotification(data.message, "error");
+        console.warn(data.message);
+        window.location.href = "SignIn.html";
+    }
+});
+
 
 async function outUser() {
     try {
