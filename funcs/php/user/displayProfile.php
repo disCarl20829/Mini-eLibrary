@@ -12,7 +12,7 @@ if (!isset($_SESSION["user_logged"])) {
 }
 */
 
-$stmt = $const->prepare("SELECT t1.shop_owner, t1.shop_history, t1.shop_mission, t1.shop_vision, t1.shop_img_path, t2.user_type FROM shop AS t1 JOIN users AS t2 ON t1.shop_id = t2.user_id WHERE t2.user_id = ?");
+$stmt = $const->prepare("SELECT t1.shop_owner, t1.shop_history, t1.shop_mission, t1.shop_vision, t1.shop_img_path, t2.user_description, t2.user_type FROM shop AS t1 JOIN users AS t2 ON t1.shop_id = t2.user_id WHERE t2.user_id = ?");
 $stmt->bind_param("i", $_SESSION["user_id"]);
 
 $stmt->execute();

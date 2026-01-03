@@ -28,6 +28,11 @@ async function displayProfile() {
             </div>
 
             <div class="box">
+                <h2>About Me</h2>
+                <p id="user_description" data-value="${data.data.user_description || ""}">${(!data.data.user_description) ? "Go to settings to express yourself!" : data.data.user_description}</p>
+            </div>
+
+            <div class="box">
                 <h2>Our Story</h2>
                 <p id="shop_history" data-value="${data.data.shop_history || ""}">${(!data.data.shop_history) ? "Modify history" : data.data.shop_history}</p>
             </div>

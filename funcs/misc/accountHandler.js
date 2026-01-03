@@ -119,6 +119,7 @@ async function displayAccount() {
     const previewUser = document.getElementById("previewUser");
     const user_name = document.querySelector('input[name="user_name"]');
     const user_email = document.querySelector('input[name="user_email"]');
+    const user_description = document.getElementById("user_description");
 
     try {
         const response = await fetch("funcs/php/user/displayAccount.php", {
@@ -137,6 +138,7 @@ async function displayAccount() {
             previewUser.dataset.old = data.data.user_img_path
             user_name.value = data.data.user_name;
             user_email.value = data.data.user_email;
+            user_description.value = data.data.user_description;
         }
     } catch (error) {
         console.error("Error displaying: ", error);
@@ -152,6 +154,7 @@ async function editAccount(e) {
     const user_email = document.querySelector('input[name="user_email"]');
     const user_password = document.querySelector('input[name="user_password"]');
     const user_confirmpass = document.querySelector('input[name="user_confirmpass"]');
+    const user_description = document.getElementById("user_description");
 
     if (user_password.value !== user_confirmpass.value) {
         showNotification("Password not matching.", "error");
@@ -165,6 +168,7 @@ async function editAccount(e) {
     formData.append("user_name", user_name.value);
     formData.append("user_email", user_email.value);
     formData.append("user_password", user_password.value);
+    formData.append("user_description", user_description.value)
     formData.append("user_img_path", user_img_path);
     formData.append("old_user_img_path", old_user_img_path);
 

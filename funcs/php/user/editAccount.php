@@ -11,7 +11,7 @@ if (!isset($_SESSION["user_id"])) {
 
 $user_id = $_SESSION["user_id"];
 
-$stmt = $const->prepare("SELECT user_name, user_email, user_password, user_img_path FROM users WHERE user_id = ?");
+$stmt = $const->prepare("SELECT * FROM users WHERE user_id = ?");
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
 $currentData = $stmt->get_result()->fetch_assoc();
@@ -52,6 +52,7 @@ if (!empty($_POST['user_name']) && $_POST['user_name'] !== $currentData['user_na
 }
 
 $user_email = !empty($_POST['user_email']) ? $_POST['user_email'] : $currentData['user_email'];
+$user_description = !empty($_POST['user_description']) ? $_POST['user_description'] : $currentData['user_description'];
 
 if (!empty($_POST['user_password'])) {
     $user_password = password_hash($_POST['user_password'], PASSWORD_DEFAULT);
@@ -59,8 +60,8 @@ if (!empty($_POST['user_password'])) {
     $user_password = $currentData['user_password'];
 }
 
-$stmt = $const->prepare("UPDATE users SET user_name = ?, user_email = ?, user_password = ?, user_img_path = ? WHERE user_id = ?");
-$stmt->bind_param("ssssi", $user_name, $user_email, $user_password, $user_img_path, $user_id);
+$stmt = $const->prepare("UPDATE users SET user_name = ?, user_email = ?, user_password = ?, user_img_path = ?, user_description = ? WHERE user_id = ?");
+$stmt->bind_param("sssssi", $user_name, $user_email, $user_password, $user_img_path, $user_description, $user_id, );
 
 if ($stmt->execute()) {
     echo json_encode(["status" => "updated", "message" => "Account successfully updated."]);

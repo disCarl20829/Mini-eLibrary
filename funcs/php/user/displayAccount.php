@@ -11,7 +11,7 @@ if (!isset($_SESSION["user_logged"])) {
 }
 */
 
-$stmt = $const->prepare("SELECT user_name, user_email, user_password, user_description, user_img_path, user_type FROM users WHERE user_id = ?");
+$stmt = $const->prepare("SELECT * FROM users WHERE user_id = ?");
 $stmt->bind_param("i", $_SESSION["user_id"]);
 
 $stmt->execute();
