@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , intial-scale="1.0">
+    <title>eLibrary | Settings</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/ui-feedback.css">
+    <link rel="stylesheet" href="Design/auth.css">
+    <script src="funcs/misc/accountHandler.js"></script>
+    <script src="funcs/misc/globalChecker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+    <main class="auth-page auth--settings">
+        <h2><em>Where literatures reside.</em></h2>
+        <h3>Edit your account information.</h3>
+
+        <div class="auth-card">
+            <form onsubmit="editAccount(event)">
+                <input type="file" accept="image/*" id="user_img_path" onchange="previewImage(event)">
+                <img id="previewUser">
+
+                <input type="text" name="user_name" placeholder="Username">
+                <input type="email" name="user_email" placeholder="Email">
+                <input type="password" name="user_password" placeholder="New Password">
+                <input type="password" name="user_confirmpass" placeholder="Confirm Password">
+
+                <div class="extras">
+                    <label class="remember">
+                        <input type="checkbox"> Remember Me
+                    </label>
+                </div>
+
+                <a class="create" id="show" style="cursor: pointer;">Show Password</a>
+
+                <button type="submit">Change</button>
+            </form>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <div id="notification-container"></div>
+    <div id="confirm-container"></div>
+
+    <script>displayAccount()</script>
+</body>
+
+</html>

@@ -1,0 +1,158 @@
+/* ===== SAVED BOOKS PAGE ===== */
+.saved-books {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.saved-books h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== BOOK LIST ===== */
+#book-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ===== BOOK CARD ===== */
+.book-card {
+    background-color: #fff;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== BOOK IMAGE ===== */
+.book-card img {
+    width: 140px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* ===== BOOK INFO ===== */
+.book-info {
+    flex: 1;
+}
+
+.book-info h3 {
+    font-size: 1.2rem;
+}
+
+.book-info .author {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+}
+
+/* ===== QUANTITY & PRICE ===== */
+.qty-price-row,
+.book-info > label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.qty,
+.author {
+    font-weight: bold;
+}
+
+input.quantity,
+#quantity {
+    width: 60px;
+    padding: 0.3rem;
+    text-align: center;
+}
+
+.book-info button {
+    background-color: burlywood;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book-info button:hover {
+    opacity: 0.8;
+}
+
+/* ===== PRICE ===== */
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+/* ===== CARD ACTIONS ===== */
+.card-actions .remove {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.card-actions .remove:hover {
+    opacity: 0.85;
+}
+
+/* ===== CART SUMMARY ===== */
+.cart-summary-wrap {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.cart-summary {
+    background-color: rgba(222, 184, 135, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+}
+
+.total-line {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* ===== PURCHASE BUTTON ===== */
+.purchase {
+    background-color: burlywood;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.purchase:hover {
+    opacity: 0.85;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .book-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .book-card img {
+        width: 120px;
+        height: 170px;
+    }
+
+    .cart-summary-wrap {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

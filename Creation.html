@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , intial-scale="1.0">
+    <title>eLibrary | Account Creation</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/ui-feedback.css">
+    <link rel="stylesheet" href="Design/auth.css">
+    <script src="funcs/misc/accountHandler.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+    <main class="auth-page auth--create">
+        <h2><em>Where literatures reside.</em></h2>
+        <h3>Fill in the following to create an account.</h3>
+
+        <div class="auth-card">
+            <form method="post" action="" onsubmit="createAccount(event)">
+                <input type="file" accept="image/*" name="user_img_path" id="user_img_path"
+                    onchange="previewImage(event)" required>
+                <img id="previewUser">
+
+                <input type="text" name="user_name" placeholder="Username" required>
+                <input type="email" name="user_email" placeholder="Email" required>
+
+                <select id="user-type" required>
+                    <option data-id="" disabled selected>User Type</option>
+                    <option data-id="1">Seller</option>
+                    <option data-id="2">Buyer</option>
+                </select>
+
+                <input type="password" name="user_password" placeholder="Password" required>
+                <input type="password" name="user_confirmpass" placeholder="Confirm Password" required>
+
+                <div class="extras">
+                    <label class="remember">
+                        <input type="checkbox" id="remember">
+                        Remember Me
+                    </label>
+                </div>
+
+                <a href="SignIn.html" class="create">Already have an Account?</a>
+                <a class="create" id="show" style="cursor: pointer;">Show Password</a>
+
+                <button type="submit">Create</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <div id="notification-container"></div>
+    <div id="confirm-container"></div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+/* ===== AUTH PAGE LAYOUT ===== */
+.auth-page {
+    min-height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+/* ===== AUTH HEADINGS ===== */
+.auth-page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-page h3 {
+    font-weight: normal;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* ===== AUTH CARD ===== */
+.auth-card, .creation {
+    background-color: #fff;
+    width: 100%;
+    max-width: 420px;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.auth-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* center horizontally */
+    gap: 1rem; /* space between inputs, checkbox, and button */
+}
+
+/* ===== FORM INPUTS ===== */
+.auth-card input[type="text"],
+.auth-card input[type="email"],
+.auth-card input[type="password"],
+.auth-card input[type="file"],
+.creation input[type="text"],
+.creation input[type="email"],
+.creation input[type="password"],
+.creation input[type="file"],
+.creation select {
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    font-family: inherit;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ===== IMAGE PREVIEW ===== */
+#previewUser {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0.5rem auto 1rem;
+    display: block;
+    border: 3px solid burlywood;
+}
+
+/* ===== EXTRAS ===== */
+.extras {
+    display: flex;
+    justify-content: flex-start; /* align items to left */
+    align-items: center;
+    width: 100%; /* full width */
+    margin-bottom: 1.2rem; /* space below for the submit button */
+    gap: 0.5rem; /* space between checkbox and text */
+}
+
+.extras a {
+    color: #7a5a2e;
+    font-weight: bold;
+}
+
+.extras a:hover {
+    text-decoration: underline;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.auth-card button,
+.creation button {
+    display: block;
+    margin: 0 auto; /* center horizontally */
+    margin-top: 0.8rem;
+    background: linear-gradient(135deg, burlywood, #d2a679);
+    color: #3b2b16;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-card button:hover,
+.creation button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(0,0,0,0.2);
+}
+
+/* ===== PAGE MODIFIERS ===== */
+.auth--signin .auth-card button {
+    background: linear-gradient(135deg, burlywood, #deb887);
+}
+
+.auth--settings .auth-card button {
+    background: linear-gradient(135deg, #deb887, #c9a368);
+}
+
+.auth--create .creation button {
+    background: linear-gradient(135deg, burlywood, #f0c27b);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .auth-page h2 {
+        font-size: 1.4rem;
+    }
+
+    .auth-card, .creation {
+        padding: 1.5rem;
+    }
+
+    .extras {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>eLibrary | Update Book</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/table.css">
+    <link rel="stylesheet" href="Design/ui-feedback.css">
+    <script src="funcs/book/bookHandler.js"></script>
+    <script src="funcs/misc/globalChecker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+    <main class="table-page">
+        <h2>Manage Books</h2>
+        <p class="subtitle">Edit or remove books from the library.</p>
+
+        <div class="table-wrapper">
+            <table id="books-table">
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Image</th>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Publication Date</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="book-list">
+                    <!-- Book entries will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <div id="notification-container"></div>
+    <div id="confirm-container"></div>
+
+    <script>loadBooks()</script>
+</body>
+
+</html>

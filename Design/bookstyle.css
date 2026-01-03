@@ -1,0 +1,175 @@
+/* ===== BOOK PAGE LAYOUT ===== */
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.book {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Book image section */
+.booksec {
+    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.booksec img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Book information section */
+.book-info {
+    flex: 2 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.book-info h4.title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #5a3b1d;
+}
+
+.book-info h5.author,
+.book-info p.year,
+.book-info p.category {
+    font-size: 1rem;
+    color: #555;
+}
+
+.book-info p {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Price styling */
+.book-price {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: burlywood;
+}
+
+/* Quantity row */
+.qty-price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.qty-price-row label.qty {
+    font-weight: bold;
+}
+
+.qty-price-row input.quantity {
+    width: 60px;
+    padding: 0.3rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.qty-price-row button {
+    padding: 0.3rem 0.6rem;
+    background-color: burlywood;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.qty-price-row button:hover {
+    background-color: #d2a679;
+}
+
+/* Book info footer buttons */
+.book-info-footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.book-info-footer button {
+    flex: 1;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-info-footer button:first-child {
+    background-color: burlywood;
+    color: #3b2b16;
+}
+
+.book-info-footer button:last-child {
+    background-color: #deb887;
+    color: #3b2b16;
+}
+
+.book-info-footer button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+    .book {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .book-info {
+        align-items: center;
+    }
+
+    .book-info-footer {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .book-info-footer button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .book-price {
+        font-size: 1.2rem;
+    }
+
+    .qty-price-row input.quantity {
+        width: 50px;
+    }
+}

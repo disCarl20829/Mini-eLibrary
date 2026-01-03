@@ -1,0 +1,130 @@
+/* ===== CATEGORY SECTIONS ===== */
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+section>div {
+    background-color: rgba(222, 184, 135, 0.25);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+/* ===== BOOK GROUP GRID ===== */
+.bookgroups {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ===== BOOK CARD ===== */
+.book {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== BOOK CONTENT ===== */
+.book img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.book h4 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+.book h5 {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.book p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+/* Category links */
+.category-list a {
+    text-decoration: none;
+    color: #333;
+    padding: 4px 10px;
+    position: relative;
+    font-weight: 500;
+    white-space: nowrap;
+    /* prevents awkward text breaks */
+}
+
+/* Dot separator */
+.category-list a:not(:last-child)::after {
+    content: "•";
+    position: absolute;
+    right: -6px;
+    color: #888;
+    font-size: 1rem;
+}
+
+/* Hover*
+
+/* ===== MOBILE ===== */
+@media (max-width: 480px) {
+    main {
+        padding: 1rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    .book img {
+        height: 180px;
+    }
+
+    .category-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 0;
+        padding: 10px;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .category-list::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari */
+    }
+
+}

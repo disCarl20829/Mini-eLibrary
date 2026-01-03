@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>eLibrary | Create Book</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/book-form.css">
+    <link rel="stylesheet" href="Design/ui-feedback.css">
+    <script src="funcs/book/bookHandler.js"></script>
+    <script src="funcs/misc/globalChecker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+    <main class="form-page create-book">
+        <h2>Create New Book</h2>
+        <p class="subtitle">Fill in the details to add a book to the library.</p>
+
+        <div class="form-card">
+            <form method="post" action="" onsubmit="createBook(event)">
+                <input type="file" accept="image/*" id="book_img_path" onchange="previewImage(event)">
+                <img id="previewBookImg">
+
+                <input type="text" placeholder="Book Title" id="book_title" required>
+                <input type="text" placeholder="Author" id="book_author" required>
+                <input type="text" placeholder="Publication Year" id="book_pubdate" minlength="4" maxlength="4">
+
+                <select id="book_category" required>
+                    <option value="" disabled selected>Select Category</option>
+                    <option value="1">History</option>
+                    <option value="2">Educational</option>
+                    <option value="3">Philosophical</option>
+                    <option value="4">Self-Help</option>
+                    <option value="5">Fiction</option>
+                </select>
+
+                <input type="number" placeholder="Price (₱)" id="book_price" min="0" step="0.01">
+
+                <textarea placeholder="Book Description" id="book_description"></textarea>
+
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <div id="notification-container"></div>
+    <div id="confirm-container"></div>
+</body>
+
+</html>

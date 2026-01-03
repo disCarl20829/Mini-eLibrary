@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>eLibrary | Cart</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/saved-books.css">
+    <link rel="stylesheet" href="Design/ui-feedback.css">
+    <script src="funcs/book/cartHandler.js"></script>
+    <script src="funcs/misc/globalChecker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+
+    <main>
+        <section class="saved-books">
+            <h2>Saved Books</h2>
+
+            <div id="book-list">
+                <div class="book-card" id="book-card">
+                    <img src="img/book-meinkampf.jpg" alt="MeinKampf">
+                    <div class="book-info">
+                        <h3>Mein Kampf</h3>
+                        <p class="author">by Adolf Hitler</p>
+
+                        <div class="qty-price-row">
+                            <label class="qty"> Quantity</label>
+                            <input type="number" min="1" value="1" title="quantity" id="quantity" disabled>
+                            <button type="button" onclick="quantityCrement(this.closest('.book-info'), '+')">+</button>
+                            <button type="button" onclick="quantityCrement(this.closest('.book-card'), '-')">-</button>
+                        </div>
+
+                        <div class="price">
+                            <span class="price-text" id="price">₱569</span>
+                        </div>
+
+                        <div class="card-actions">
+                            <button class="remove" onclick="removeBook(this)">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-summary-wrap">
+                <div class="cart-summary">
+                    <div class="total-line">
+                        <span class="total-label">Total:</span>
+                        <span class="total-amount" id="total-amount">₱non</span>
+                    </div>
+                </div>
+
+                <div class="purchase-wrap">
+                    <button class="purchase" onclick="showNotification('Feature unavailable', 'warning')">Purchase</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <div id="notification-container"></div>
+    <div id="confirm-container"></div>
+</body>
+
+</html>

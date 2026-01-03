@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , intial-scale="1.0">
+    <title>eLibrary | Profile</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/ui-feedback.css">
+    <link rel="stylesheet" href="Design/shop-profile.css">
+    <script src="funcs/misc/profileDisplay.js"></script>
+    <script src="funcs/misc/globalChecker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+    <h2>About</h2>
+
+    <main>
+        <section class="about"></section>
+
+        <section>
+            <div id="info">
+                <div class="main">
+                    <img src="img/aboutme.png" alt="carlospepito" class="owner-img">
+                    <h3>Carlos Anthony U. Pepito</h2>
+                </div>
+
+                <div class="box">
+                    <h2>Our Story</h2>
+                    <p>Founded in 2022 by a group of book lovers in Tagum City, <strong>eLibrary</strong> started as a
+                        student project with a simple aim: <br>
+                        make curated reading material accessible to our community. <br>
+                        We began with a small selection of titles and a handful of volunteers helping to catalog books.
+                        <br>
+                        Over time the project grew into a local hub where students, teachers, and curious readers can
+                        discover both classic and
+                        contemporary works.
+                    </p>
+                </div>
+
+                <div class="box">
+                    <h3 class="innerH">Vision</h3>
+                    <p>To inspire lifelong learning by providing an easy-to-use, community-focused digital library that
+                        connects
+                        readers to thoughtfully selected books and trustworthy information.</p>
+                </div>
+
+                <div class="box">
+                    <h3 class="innerH">Mission</h3>
+                    <p>To inspire lifelong learning by providing an easy-to-use, community-focused digital library that
+                        connects
+                        readers to thoughtfully selected books and trustworthy information.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="customer-feedbacks">
+            <div class="container">
+                <div id="input-feedback">
+                    <h4 id="user_name"></h4>
+
+                    <div class="rate">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5">5</label>
+
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4">4</label>
+
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3">3</label>
+
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2">2</label>
+
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1">1</label>
+                    </div>
+
+                    <textarea placeholder="Enter feedback here" rows="3" cols="50" id="feedback"></textarea>
+                    <button type="button" onclick="uploadFeedback()">Submit</button>
+                </div>
+
+                <h2>Customer Feedbacks</h2>
+
+                <div class="feedback-list">
+                    <article class="feedback">
+                        <div class="right">
+                            <img src="img/user-icon.png" alt="User Icon" class="user-icon">
+                            <h4>John D.</h4>
+                            <p class="text">★★★★☆</p>
+                            <p class="text">
+                                "eLibrary helped me find references for my thesis quickly. The site is simple to use and
+                                the staff were
+                                very helpful when I requested a hard-to-find title. Highly recommended for students."
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <div id="notification-container"></div>
+    <div id="confirm-container"></div>
+</body>
+
+</html>

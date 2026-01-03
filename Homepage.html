@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" , intial-scale="1.0">
+    <title>eLibrary | Home</title>
+    <link rel="stylesheet" href="Design/general.css">
+    <link rel="stylesheet" href="Design/categories.css">
+    <script src="funcs/book/bookHandler.js"></script>
+    <script src="funcs/misc/globalChecker.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>eLibrary</h1>
+        <ul class="navbar">
+        </ul>
+    </header>
+
+    <main>
+        <section class="category-list">
+            <a href="#History">History</a>
+            <a href="#Educational">Educational</a>
+            <a href="#Philosophical">Philosophical</a>
+            <a href="#Self-Help">Self-Help</a>
+            <a href="#Fiction">Fiction</a>
+        </section>
+
+        <section>
+            <!-- History -->
+            <div>
+                <h2>History</h2>
+                <div class="bookgroups" id="History"></div>
+            </div>
+
+            <!-- Educational -->
+            <div>
+                <h2>Educational</h2>
+                <div class="bookgroups" id="Educational"></div>
+            </div>
+
+            <!-- Philosophical -->
+            <div>
+                <h2>Philosophical</h2>
+                <div class="bookgroups" id="Philosophical"></div>
+            </div>
+
+            <!-- Self-help -->
+            <div>
+                <h2>Self-help</h2>
+                <div class="bookgroups" id="Self-Help"></div>
+            </div>
+
+            <!-- Fiction -->
+            <div>
+                <h2>Fiction</h2>
+                <div class="bookgroups" id="Fiction"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Carlos Anthony U. Pepito</p>
+        <p>&copy; 2025 eLibrary. All rights reserved.</p>
+    </footer>
+
+    <script>displayBooks()</script>
+</body>
+
+</html>

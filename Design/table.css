@@ -1,0 +1,216 @@
+/* ===== TABLE PAGE ===== */
+.table-page {
+    padding: 2rem;
+    min-height: calc(100vh - 160px);
+}
+
+.table-page h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #5a3b1d;
+    margin-bottom: 0.3rem;
+}
+
+.table-page .subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+/* Wrapper for horizontal scroll on small screens */
+.table-wrapper {
+    overflow-x: auto;
+    background-color: #fff;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+/* ===== TABLE ===== */
+#books-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px;
+}
+
+/* Header */
+#books-table thead {
+    background-color: burlywood;
+}
+
+#books-table th {
+    padding: 0.75rem;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #3b240f;
+    white-space: nowrap;
+}
+
+/* Body */
+#books-table td {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    vertical-align: top;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Zebra rows */
+#books-table tbody tr:nth-child(even) {
+    background-color: #faf3e6;
+}
+
+/* Hover */
+#books-table tbody tr:hover {
+    background-color: #f3e2c7;
+}
+
+/* ===== FORM ELEMENTS IN TABLE ===== */
+#books-table input,
+#books-table select,
+#books-table textarea {
+    width: 100%;
+    padding: 0.35rem 0.45rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    background-color: #fff;
+}
+
+#books-table textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+/* Disabled state */
+#books-table input:disabled,
+#books-table select:disabled,
+#books-table textarea:disabled {
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: not-allowed;
+}
+
+/* ===== BOOK IMAGE ===== */
+#books-table img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+    margin: auto;
+}
+
+/* ===== ACTION BUTTONS ===== */
+#books-table td:last-child {
+    white-space: nowrap;
+}
+
+#books-table button {
+    border: none;
+    padding: 0.4rem 0.6rem;
+    margin: 0.15rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+/* Edit */
+#books-table button:first-child {
+    background-color: burlywood;
+    color: #3b240f;
+}
+
+#books-table button:first-child:hover {
+    background-color: #d2a679;
+    transform: translateY(-1px);
+}
+
+/* Delete */
+#books-table button:last-child {
+    background-color: #c0392b;
+    color: #fff;
+}
+
+#books-table button:last-child:hover {
+    background-color: #a93226;
+    transform: translateY(-1px);
+}
+
+/* ===== MOBILE RESPONSIVE TABLE ===== */
+@media (max-width: 768px) {
+    .table-page {
+        padding: 1rem;
+    }
+
+    #books-table {
+        min-width: 900px;
+    }
+
+    /* Hide table header */
+    #books-table thead {
+        display: none;
+    }
+
+    /* Make table rows cards */
+    #books-table,
+    #books-table tbody,
+    #books-table tr,
+    #books-table td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Row card */
+    #books-table tr {
+        background-color: #fff;
+        margin-bottom: 1.2rem;
+        border-radius: 16px;
+        padding: 1rem;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Cell layout */
+    #books-table td {
+        display: flex;
+        flex-direction: column;
+        padding: 0.4rem 0;
+        border: none;
+    }
+
+    /* Label */
+    #books-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        font-size: 0.75rem;
+        color: #5a3b1d;
+        margin-bottom: 0.2rem;
+        text-transform: uppercase;
+    }
+
+    /* Image center */
+    #books-table img {
+        margin: 0 auto 0.5rem;
+    }
+
+    /* Buttons full width */
+    #books-table td:last-child {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    #books-table button {
+        flex: 1;
+        font-size: 0.85rem;
+        padding: 0.6rem;
+    }
+
+    /* Inputs cleaner */
+    #books-table input,
+    #books-table select,
+    #books-table textarea {
+        font-size: 0.9rem;
+    }
+}
